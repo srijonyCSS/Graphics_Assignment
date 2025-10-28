@@ -3,18 +3,18 @@
 #include <vector>
 using namespace std;
 
-// Clipping window boundaries
+
 float xmin, ymin, xmax, ymax;
 
-// Line structure
+
 struct Line {
     float x1, y1, x2, y2;
 };
 
-// Vector to store user input lines
+
 vector<Line> lines;
 
-// Liang–Barsky Line Clipping Function
+
 bool liangBarskyClip(float x1, float y1, float x2, float y2,
                      float &cx1, float &cy1, float &cx2, float &cy2)
 {
@@ -48,7 +48,7 @@ bool liangBarskyClip(float x1, float y1, float x2, float y2,
     return true;
 }
 
-// Draw the clipping window
+
 void drawClippingWindow() {
     glColor3f(1, 1, 1); // White
     glBegin(GL_LINE_LOOP);
@@ -59,7 +59,7 @@ void drawClippingWindow() {
     glEnd();
 }
 
-// Display function
+
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
     glLineWidth(2.0);
@@ -70,14 +70,14 @@ void display() {
         float x1 = line.x1, y1 = line.y1;
         float x2 = line.x2, y2 = line.y2;
 
-        // Draw original line in RED
+       
         glColor3f(1, 0, 0);
         glBegin(GL_LINES);
             glVertex2f(x1, y1);
             glVertex2f(x2, y2);
         glEnd();
 
-        // Clip and draw in GREEN
+       
         float cx1, cy1, cx2, cy2;
         if (liangBarskyClip(x1, y1, x2, y2, cx1, cy1, cx2, cy2)) {
             glColor3f(0, 1, 0);
@@ -91,13 +91,13 @@ void display() {
     glFlush();
 }
 
-// OpenGL Initialization
+
 void init() {
     glClearColor(0, 0, 0, 0);
     gluOrtho2D(-300, 300, -300, 300);
 }
 
-// Main function
+
 int main(int argc, char **argv) {
     cout << "Enter clipping window coordinates:" << endl;
     cout << "xmin ymin xmax ymax: ";
@@ -118,7 +118,7 @@ int main(int argc, char **argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(800, 600);
-    glutCreateWindow("Liang–Barsky Line Clipping (User Input)");
+    glutCreateWindow("Liangâ€“Barsky Line Clipping (User Input)");
 
     init();
     glutDisplayFunc(display);
@@ -126,3 +126,4 @@ int main(int argc, char **argv) {
 
     return 0;
 }
+

@@ -13,7 +13,7 @@ void drawPixel(int x, int y) {
 }
 
 
-// (a) Standard Bresenham Line Drawing Algorithm
+// (a) Standard Bresenham Line 
 
 void bresenhamLine(int x1, int y1, int x2, int y2) {
     int dx = abs(x2 - x1);
@@ -40,7 +40,7 @@ void bresenhamLine(int x1, int y1, int x2, int y2) {
 }
 
 
-// (b) Thick Line using offset Bresenham lines
+// (b) Thick Line 
 
 void thickBresenhamLine(int x1, int y1, int x2, int y2, int width) {
     float dx = x2 - x1;
@@ -73,7 +73,7 @@ void display() {
 
 
 void init() {
-    glClearColor(0, 0, 0, 0); // black background
+    glClearColor(0, 0, 0, 0); // black color
     gluOrtho2D(0, 640, 0, 480);
 }
 
@@ -100,3 +100,4 @@ int main(int argc, char** argv) {
     glutMainLoop();
     return 0;
 }
+
